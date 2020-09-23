@@ -24,6 +24,7 @@ jobs:
         port: ${{ secrets.PORT }}
         source: /home/runner/work/personal_web/personal_web/*
         target: /var/www/personal
+        strip_components: 5:  
       
     - name: Run a one-line script
       run: echo Done!
