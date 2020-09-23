@@ -14,10 +14,13 @@ jobs:
    
     steps:
     - uses: actions/checkout@v2 
-    - name: Run a multi-line script
-      run: |
-        mkdir ../build
-        cp index.html ../build
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+          name: dist-without-markdown
+          path: |
+            dist
+            !dist/**/*.md
     - name: Publish app
       uses: appleboy/scp-action@master
       with:
@@ -27,7 +30,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
         source: build
-        target: /var/www/personal/
+        target: ${{ TARGET_DIR }}
       
     - name: Run a one-line script
       run: echo Done!
