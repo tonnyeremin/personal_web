@@ -18,7 +18,6 @@ jobs:
       run: |
         mkdir ../build
         cp index.html ../build
-        tar -cvf deploy.tar ../build/
     - name: Publish app
       uses: appleboy/scp-action@master
       with:
@@ -27,7 +26,7 @@ jobs:
         key: ${{ secrets.KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
-        source: deploy.tar
+        source: ../build
         target: /var/www/personal/
       
     - name: Run a one-line script
