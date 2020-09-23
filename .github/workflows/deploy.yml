@@ -12,8 +12,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+   
 
     steps:
+    - name: Run a one-line script
+      run: secrets.KEY, secrets.HOST, secrets.USERNAME
     - name: Publish app
       uses: appleboy/ssh-action@master
       with:
