@@ -15,8 +15,6 @@ jobs:
    
 
     steps:
-    - name: Run a one-line script
-      run: echo  ${{ secrets.KEY }} ${{ secrets.HOST }}
     - name: Publish app
       uses: appleboy/ssh-action@master
       with:
