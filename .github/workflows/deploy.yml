@@ -24,7 +24,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
         script: |
-          scp -r ./ root@207.154.201.155:/var/www/personal
+          scp -r root@207.154.201.155:./ /var/www/personal
       
     - name: Run a one-line script
       run: echo Done!
