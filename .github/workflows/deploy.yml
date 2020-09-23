@@ -22,8 +22,7 @@ jobs:
         key: ${{ secrets.KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
-        rm: True
-        source: /home/runner/work/personal_web/personal_web
+        source: /home/runner/work/personal_web/personal_web/*
         target: /var/www/personal
       
     - name: Run a one-line script
