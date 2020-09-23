@@ -22,7 +22,7 @@ jobs:
         key: ${{ secrets.KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
-        source: "${{GITHUB_WORKSPACE}}/personal_web, !{{GITHUB_WORKSPACE}}/personal_web/.github"
+        source: "${{ GITHUB_WORKSPACE }}/personal_web, !{{GITHUB_WORKSPACE}}/personal_web/.github"
         target: "/var/www/personal"
       
     - name: Run a one-line script
