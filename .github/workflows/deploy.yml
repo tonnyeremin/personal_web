@@ -30,7 +30,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
         source: build
-        target: ${{ TARGET_DIR }}
+        target: ${{ secrets.TARGET_DIR }}
       
     - name: Run a one-line script
       run: echo Done!
