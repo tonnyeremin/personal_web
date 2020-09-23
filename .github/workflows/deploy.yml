@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
    
     steps:
+    - uses: actions/checkout@v2 
     - name: Publish app
       uses: appleboy/scp-action@master
       with:
@@ -21,8 +22,8 @@ jobs:
         key: ${{ secrets.KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
-        source: ./*
-        target: /var/www/personal 
+        source: "${{GITHUB_WORKSPACE}}/personal_web, !{{GITHUB_WORKSPACE}}/personal_web/.github"
+        target: "/var/www/personal"
       
     - name: Run a one-line script
       run: echo Done!
