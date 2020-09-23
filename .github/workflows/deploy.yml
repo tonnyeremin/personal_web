@@ -24,8 +24,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
         script: |
-          whoami
-          ls -al
+          scp -r ./ ${{ secrets.USERNAME }}${{ secrets.HOST }}:/var/www/personal
       
     - name: Run a one-line script
       run: echo Done!
