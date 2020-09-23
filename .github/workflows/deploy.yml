@@ -5,20 +5,18 @@ name: CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
    
     steps:
     - uses: actions/checkout@v2
-    - name: Run a multi-line script
+    - name: Copy sources
       run: |
         mkdir build
         cp -r source/. build/ 
-    - name: Publish app
+    - name: Upload files to remote host
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
@@ -30,5 +28,5 @@ jobs:
         target: ${{ secrets.TARGET_DIR }}
         strip_components: 1
       
-    - name: Run a one-line script
+    - name: Finish
       run: echo Done!
