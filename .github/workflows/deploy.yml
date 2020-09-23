@@ -23,7 +23,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
         rm: True
-        source: $GITHUB_WORKSPACE/personal_web
+        source: /home/runner/work/personal_web/personal_web
         target: /var/www/personal
       
     - name: Run a one-line script
