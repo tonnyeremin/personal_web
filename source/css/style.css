@@ -15,6 +15,20 @@ body {
     margin: auto;
 }
 
+a {
+    color:#007acc;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover {
+    color:#00548c ;
+}
+
+a:visited {
+    color:#007acc;
+}
+
 a.label {
     text-decoration: none;
     display: inline-block;
@@ -30,7 +44,7 @@ a.label {
 a.label:hover {
     text-decoration: none;
     color: #cdcdcd;
-    background-color:#007acc;
+    background-color:#00548c;
     border-color: #cdcdcd;
     border-width: 0.2em;
 }
